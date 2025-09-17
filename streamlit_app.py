@@ -48,7 +48,8 @@ if ingredients_list:
 # New section to display smoothiefroot nutrition information
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
+st.text(smoothiefroot_response.json)
+
 # ----------------------------INSERTAR LAS ENTRADAS EN LA BASE DE DATOS ------------------------
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
             values ('""" + ingredients_string + """', '"""+name_on_order+"""')"""
